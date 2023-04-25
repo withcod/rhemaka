@@ -1,0 +1,105 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Contact rhemaka Institute</title>
+    <link rel="favicon" href="">
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding-top:50px;
+      }
+      label {
+        display: block;
+        margin-bottom: 5px;
+        font-size:12px;
+        align-self:flex-start;
+        text-align: justify;
+      }
+      input, select {
+        font-size: 14px;
+        padding: 8px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        margin: 0;
+        width: 100%;
+        margin-bottom: 20px;
+        box-sizing:border-box;
+        outline-color:#4CAF50;
+      }
+      input[type="submit"] {
+        background-color: #4CAF50;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        padding: 10px 20px;
+        cursor: pointer;
+      }
+      input[type="submit"]:hover {
+        background-color: #3e8e41;
+      }
+      form {
+        display: flex;
+        flex-direction:column;
+        justify-content: center;
+        align-items: center;
+      }
+      .container {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 20px;
+        border-radius: 10px;
+        border: 1px solid #ccc;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Contact rhemaka Institute</h1>
+      <form onsubmit="sendEmail(); reset(); return false;">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" placeholder="Enter your name" required>
+
+        <label for="name">email:</label>
+        <input type="text" id="email" name="name" placeholder="Enter your email" required>
+        
+        <label for="language">Language you speak:</label>
+        <input type="text" id="language" name="language" placeholder="Enter the language you speak" required>
+        
+        <label for="country">Country you're from:</label>
+        <input type="text" id="country" name="country" placeholder="Enter your country" required>
+        
+        <label for="experience">Programming experience:</label>
+        <select id="experience" name="experience">
+          <option value="beginner">Beginner</option>
+          <option value="intermediate">Intermediate</option>
+          <option value="advanced">Advanced</option>
+        </select>
+        
+        <label for="learn">Language you look forward to learning:</label>
+        <input type="text" id="learn" name="learn" placeholder="Enter the language you want to learn" required>
+        
+        <input type="submit" value="Submit">
+      </form>
+    </div>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script>
+     
+    function sendEmail(){
+      const mailVal = document.getElementById('email').value;
+      alert(mailVal)
+        Email.send({
+        Host : "smtp.elasticemail.com",
+        Username : "okoriepaul362@gmail.com",
+        Password:"B8AEB122F78F19BD41402118EDFFA35CEE0B",
+        To :'okoriepaul362@gmail.com',
+        From:"okoriepaul362@gmail.com",
+        Subject : "jhg",
+        Body : "And this is the bdy"
+    }).then(
+      message => alert(message)
+    );}
+    </script>
+  </body>
+</html>
