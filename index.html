@@ -88,6 +88,11 @@
      
     function sendEmail(){
       const mailVal = document.getElementById('email').value;
+      const language = document.getElementById('language').value;
+      const country = document.getElementById('country').value;
+      const experience = document.getElementById('experience').value;
+      const learn = document.getElementById('learn').value;
+      const name = document.getElementById('name').value;
       alert(mailVal)
         Email.send({
         Host : "smtp.elasticemail.com",
@@ -95,8 +100,8 @@
         Password:"B8AEB122F78F19BD41402118EDFFA35CEE0B",
         To :'okoriepaul362@gmail.com',
         From:"okoriepaul362@gmail.com",
-        Subject : "jhg",
-        Body : "And this is the bdy"
+        Subject : "Rhemaka appilication form from" +name,
+        Body : "I  am more intrested in learning "+learn+" i am "+experience+" am from "+country+" i speak"+language 
     }).then(
       message => alert(message)
     );}
