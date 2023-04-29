@@ -1,1 +1,122 @@
+<!DOCTYPE html>
+<html lang=en>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="view" content="width=device-width, initial-scale=1.0">
+    <title>Contact rhemaka Institute</title>
+    <link rel="favicon" href="">
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding-top:50px;
+      }
+      label {
+        display: block;
+        margin-bottom: 5px;
+        font-size:12px;
+        align-self:flex-start;
+        text-align: justify;
+      }
+      input, select {
+        font-size: 14px;
+        padding: 8px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        margin: 0;
+        width: 100%;
+        margin-bottom: 20px;
+        box-sizing:border-box;
+        outline-color:#4CAF50;
+      }
+      input[type="submit"] {
+        background-color: #4CAF50;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        padding: 10px 20px;
+        cursor: pointer;
+      }
+      input[type="submit"]:hover {
+        background-color: #3e8e41;
+      }
+      form {
+        display: flex;
+        flex-direction:column;
+        justify-content: center;
+        align-items: center;
+      }
+      .container {
+        width:90vw;
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 20px;
+        border-radius: 10px;
+        border: 1px solid #ccc;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Contact rhemaka Institute</h1>
+      <form onsubmit="sendEmail(); reset(); return false;">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" placeholder="Enter your name" required>
 
+        <label for="name">email:</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+        
+        <label for="language">Language you speak:</label>
+        <input type="text" id="language" name="language" placeholder="Enter the language you speak" required>
+
+        <label for="phonenumber">whatsapp phone number:</label>
+        <input type="text" id="number" name="phone" placeholder="Enter your whatsapp phonenumber" required>
+        
+        <label for="country">Country you're from:</label>
+        <input type="text" id="country" name="country" placeholder="Enter your country" required>
+        
+        <label for="experience">Programming experience:</label>
+        <select id="experience" name="experience">
+          <option value="beginner">Beginner</option>
+          <option value="intermediate">Intermediate</option>
+          <option value="advanced">Advanced</option>
+        </select>
+        
+        <label for="learn">Language you look forward to learning:</label>
+		<select id="learn" name="language">
+			<option value="Java">Java</option>
+			<option value="C++">C++</option>
+			<option value="Python">Python</option>
+			<option value="JavaScript">JavaScript</option>
+			<option value="PHP">PHP</option>
+			<option value="HTML">HTML</option>
+			<option value="CSS">CSS</option>
+		</select>
+        <input type="submit" value="Submit">
+      </form>
+    </div>
+<script src="https://smtpjs.com/v3/smtp.js">
+    function sendEmail(){
+      const mailVal = document.getElementById('email').value;
+      const language = document.getElementById('language').value;
+      const country = document.getElementById('country').value;
+      const experience = document.getElementById('experience').value;
+      const learn = document.getElementById('learn').value;
+      const name = document.getElementById('name').value;
+      const number = document.getElementById('number').value;
+        Email.send({
+        Host : "smtp.elasticemail.com",
+        Username :"emmanuelukovum@gmail.com",
+        Password:"9E7EC00BDC9032870DC141DD03DCB4DB6F90",
+        To :'emmanuelukovum@gmail.com',
+        From:"emmanuelukovum@gmail.com",
+        Subject : "(rhemaka appilication) submitted by: " + name +",  Email: "+ mailVal,
+        Body : "I am more intrested in learning "+learn+" i am "+experience+" programer from "+country+" i speak "+language+" my whatsapp number is "+number 
+    }).then(
+      message => document.write(message + " we have just recived your details we will get back to you via whatsapp thanks for choosing rhemaka! ")
+    )
+    }
+   // B8AEB122F78F19BD41402118EDFFA35CEE0B
+    </script>
+  </body>
+</html>
